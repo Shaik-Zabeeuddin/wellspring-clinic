@@ -1,0 +1,155 @@
+/* Basic Reset and Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* --- Navigation Bar (Responsive Setup) --- */
+.navbar {
+    display: flex; /* Arranges children (logo and links) in a row */
+    justify-content: space-between; /* Pushes them to the edges */
+    align-items: center;
+    background-color: #007BFF; /* Clinic blue color */
+    color: white;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Arranges list items in a row */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-color: #e6f0ff;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #28a745; /* Green button */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* --- Main Content Sections --- */
+main {
+    padding: 20px;
+}
+
+section {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
+
+/* --- BMI Calculator Styling --- */
+.calculator-form label, .calculator-form input, .calculator-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.calculator-form input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.calculator-form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: none; /* Hide the box until a result is calculated */
+}
+
+/* --- Basic Responsiveness (for small screens) --- */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Stacks logo and links vertically */
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stacks links vertically */
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-links li a {
+        display: block; /* Makes the whole link clickable */
+        padding: 10px 0;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero, section {
+        padding: 30px 10px;
+    }
+}
+/* Scroll Animation Styles */
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
