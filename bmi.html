@@ -1,19 +1,50 @@
-<main>
-    <section class="calculator-section">
-        <h1>Body Mass Index (BMI) Calculator</h1>
-        <p>Enter your height and weight to calculate your BMI.</p>
-        
-        <div class="calculator-form">
-            <label for="height">Height (in meters, e.g., 1.75):</label>
-            <input type="number" id="height" step="0.01" min="0" placeholder="e.g., 1.75" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellSpring Family Clinic - BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">WellSpring Clinic</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bmi.html">BMI Calculator</a></li>
+                <li><a href="appointment.html">Appointment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h1>Body Mass Index (BMI) Calculator</h1>
+            <p>Enter your height and weight to calculate your BMI.</p>
             
-            <label for="weight">Weight (in kg, e.g., 70):</label>
-            <input type="number" id="weight" step="0.1" min="0" placeholder="e.g., 70" required>
-            
-            <button onclick="calculateBMI()">Calculate BMI</button>
-            
-            <div id="bmi-result" class="result-box">
-                </div>
-        </div>
-    </section>
-</main>
+            <div class="calculator-form">
+                <label for="height">Height (in meters, e.g., 1.75):</label>
+                <input type="number" id="height" step="0.01" min="0" placeholder="e.g., 1.75" required>
+                
+                <label for="weight">Weight (in kg, e.g., 70):</label>
+                <input type="number" id="weight" step="0.1" min="0" placeholder="e.g., 70" required>
+                
+                <button onclick="calculateBMI()">Calculate BMI</button>
+                
+                <div id="bmi-result" class="result-box">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WellSpring Family Clinic. Address: 123 Health Ave.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
