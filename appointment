@@ -52,9 +52,9 @@
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 
-                <button type="submit" class="button">Submit Request</button>
+                <button type="submit" name="submit" class="button">Submit Request</button>
                 
-                <p id="appointment-status" style="margin-top: 15px; color: green;"></p>
+                <p id="appointment-status" style="margin-top: 15px;"></p>
             </form>
         </section>
     </main>
