@@ -73,3 +73,72 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+// --- Form Submission Handlers ---
+
+// Function to handle the Appointment Request form
+const appointmentForm = document.getElementById('appointmentForm');
+const appointmentStatus = document.getElementById('appointment-status');
+
+if (appointmentForm) {
+    appointmentForm.addEventListener('submit', function(event) {
+        // Prevent the browser from submitting the form normally (which would refresh the page)
+        event.preventDefault(); 
+        
+        // Basic Client-Side Validation (HTML 'required' handles most of it, but this adds feedback)
+        if (!appointmentForm.checkValidity()) {
+            // If validation fails, let the browser show its built-in messages
+            return;
+        }
+
+        // --- Simulated Form Submission ---
+        // In a real project, you would send this data to a server here.
+        // For this assignment, we just show a success message.
+        
+        // 1. Display Success Message
+        appointmentStatus.textContent = 'Appointment request sent successfully! We will contact you soon to confirm.';
+        appointmentStatus.style.display = 'block';
+        appointmentStatus.style.backgroundColor = '#d4edda'; // Green background for success
+        
+        // 2. Clear the form fields after a small delay
+        setTimeout(() => {
+            appointmentForm.reset();
+        }, 1500); // 1.5 seconds
+
+        // Optional: Hide the message after a few seconds
+        setTimeout(() => {
+             appointmentStatus.style.display = 'none';
+        }, 5000); // 5 seconds
+    });
+}
+
+
+// Function to handle the Contact Form
+const contactForm = document.getElementById('contactForm');
+const contactStatus = document.getElementById('contact-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        if (!contactForm.checkValidity()) {
+            return;
+        }
+
+        // --- Simulated Form Submission ---
+        
+        // 1. Display Success Message
+        contactStatus.textContent = 'Thank you for your message! We will reply to your inquiry shortly.';
+        contactStatus.style.display = 'block';
+        contactStatus.style.backgroundColor = '#d4edda';
+        
+        // 2. Clear the form fields
+        setTimeout(() => {
+            contactForm.reset();
+        }, 1500);
+
+        // Optional: Hide the message after a few seconds
+        setTimeout(() => {
+            contactStatus.style.display = 'none';
+        }, 5000);
+    });
+}
