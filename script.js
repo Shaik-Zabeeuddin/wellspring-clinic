@@ -81,33 +81,28 @@ const appointmentStatus = document.getElementById('appointment-status');
 
 if (appointmentForm) {
     appointmentForm.addEventListener('submit', function(event) {
-        // Prevent the browser from submitting the form normally (which would refresh the page)
+        // PREVENTS PAGE REFRESH! This is the most crucial line for form functionality.
         event.preventDefault(); 
         
-        // Basic Client-Side Validation (HTML 'required' handles most of it, but this adds feedback)
         if (!appointmentForm.checkValidity()) {
-            // If validation fails, let the browser show its built-in messages
+            // If validation fails, let the browser handle it
             return;
         }
 
-        // --- Simulated Form Submission ---
-        // In a real project, you would send this data to a server here.
-        // For this assignment, we just show a success message.
-        
         // 1. Display Success Message
         appointmentStatus.textContent = 'Appointment request sent successfully! We will contact you soon to confirm.';
         appointmentStatus.style.display = 'block';
-        appointmentStatus.style.backgroundColor = '#d4edda'; // Green background for success
+        appointmentStatus.style.backgroundColor = '#d4edda'; 
         
         // 2. Clear the form fields after a small delay
         setTimeout(() => {
             appointmentForm.reset();
-        }, 1500); // 1.5 seconds
+        }, 1500); 
 
         // Optional: Hide the message after a few seconds
         setTimeout(() => {
              appointmentStatus.style.display = 'none';
-        }, 5000); // 5 seconds
+        }, 5000); 
     });
 }
 
@@ -142,3 +137,4 @@ if (contactForm) {
         }, 5000);
     });
 }
+
